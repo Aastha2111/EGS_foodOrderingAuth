@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <link rel="stylesheet" href="App.css" />
+    
+    <title>React App</title>
+  </head>
+  <body>
+    <div>  
+        <!-- {/* navigate to signup page */} -->
+        <form method="POST" id="Register-form">
+
+          <!-- {/* //restaurant logo*/} -->
+          <div class="align-items-center mb-4" style="margin-left: auto; margin-right: auto;">
+            <div class="mb-2" >
+                <!-- <label for="resLogofiles" class="btn">Select logo</label> -->
+                <input
+                  class="form-control bg-black"
+                  type="file"
+                  id="resLogofiles"
+                  onchange="preview()"
+                />
+                <button onclick="clearImage()" class="btn btn-primary mt-3">
+                  Reset
+                </button>
+              </div>
+              <img id="frame" src="" style="height: 200px;width: 200px; margin-left: 25%;" class="img-fluid rounded-circle" />
+            </div>
+  
+
+          <!-- {/* //form-input-name*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-user fa-lg me-3 fa-fw"
+              style= "color: grey" 
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label>Name</label> */} -->
+              <input
+                type="text"
+                class="form-control inputbox"
+                name="name"
+                id="u_name"
+                placeholder="Name"
+                
+              />
+              <!-- value={user.name}
+                onChange={handleInputs}
+                placeholder="Full Name" -->
+            </div>
+          </div>
+
+             <!-- {/* //form-email-name*/} -->
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i
+                class="fa fa-envelope fa-lg me-3 fa-fw"
+                style= "color: grey" 
+              ></i>
+              <div class="form-outline flex-fill mb-0">
+                <!-- {/* <label>Email</label> */} -->
+                <input
+                  type="text"
+                  class="form-control inputbox"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  
+                />
+                <!-- value={user.name}
+                  onChange={handleInputs}
+                  placeholder="Full Name" -->
+              </div>
+            </div>
+    
+          <!-- {/* //form-input-address*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-address-book fa-lg me-3 fa-fw"
+              style= "color: grey" 
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label>Email address</label> */} -->
+              <input
+                type="text"
+                id ="address"
+                placeholder ="address"
+                class="form-control inputbox"
+                name="address"
+               
+              />
+              <!-- value={user.address}
+              onChange={handleInputs}
+              placeholder="Address" -->
+
+            </div>
+          </div>
+    
+          <!-- {/* //form-input-pincode*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-address-book fa-lg me-3 fa-fw"
+              style= "color: grey" 
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label>Email address</label> */} -->
+              <input
+                type="text"
+                id ="pincode"
+                placeholder ="pincode"
+                class="form-control inputbox"
+                name="address"
+               
+              />
+              <!-- value={user.address}
+              onChange={handleInputs}
+              placeholder="Address" -->
+
+            </div>
+          </div>
+    
+          <!-- {/* //form-input-phonenumber*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-phone fa-lg me-3 fa-fw"
+              style="color: grey"
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label> phone </label> */} -->
+              <input
+              type="tel"
+              class="form-control inputbox"
+              id="resPhone"
+              placeholder="9947472"
+              name="phn"
+                
+              />
+              <!-- value={user.email}
+              onChange={handleInputs}
+              placeholder="Email address" -->
+            </div>
+          </div>
+    
+          <!-- {/* //form-input-pwd*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-lock fa-lg me-3 fa-fw"
+              style= "color: grey"
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label>Email address</label> */} -->
+              <input
+                type="password"
+                id="password"
+                placeholder="password"
+                class="form-control inputbox"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+    
+          <!-- {/* //form-input-confirm_pwd*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-lock fa-lg me-3 fa-fw"
+              style="color: grey"
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label>Email address</label> */} -->
+              <input
+                type="password"
+                class="form-control inputbox"
+                id="Confirm_Password"
+                placeholder="Confirm Password"
+                name="password_confirmation"
+                
+              />
+            </div>
+          </div>
+    
+          <!-- {/* //form-input-GST*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-address-card fa-lg me-3 fa-fw"
+              style= "color: grey" 
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label>Email address</label> */} -->
+              <input
+                type="text"
+                class="form-control inputbox"
+                name="GST"
+                placeholder="GST"
+                id="GST"
+                
+              />
+            </div>
+          </div>
+    
+    
+          <!-- {/* //form-owner*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-address-card fa-lg me-3 fa-fw"
+              style= "color: grey" 
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label>Email address</label> */} -->
+              <input
+                type="text"
+                class="form-control inputbox"
+                name="owner-name"
+                placeholder="ownerName"
+                id="ownerName"
+                
+              />
+            </div>
+          </div>
+          
+                <!-- {/* //owner contact -phonenumber*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-phone fa-lg me-3 fa-fw"
+              style="color: grey"
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <!-- {/* <label> phone </label> */} -->
+              <input
+              type="tel"
+              class="form-control inputbox"
+              id="ownercontact"
+              placeholder="9947472"
+              name="ownercontact"
+                
+              />
+              <!-- value={user.email}
+              onChange={handleInputs}
+              placeholder="Email address" -->
+            </div>
+          </div>
+    
+
+
+          <!-- {/* //form-input-restaurantTYpe*/} -->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i
+              class="fa fa-user fa-lg me-3 fa-fw"
+              style= "color: grey" 
+            ></i>
+            <div class="form-outline flex-fill mb-0">
+              <input
+                type="text"
+                class="form-control inputbox"
+                name="res_type"
+                value={user.res_type}
+                placeholder="Restaurant Category"
+              
+              />
+            </div>
+          </div>
+
+
+            <!-- subscription -->
+
+            <div class="form-group">
+              <div class="form-check offset-1">
+                <input class="form-check-input" type="checkbox" id="subscription" />
+                <label class="form-check-label" for="gridCheck">
+                  subscription
+                </label>
+              </div>
+            </div>
+
+          <!-- {/* loginBUtton */} -->
+          <button
+            class="btn rounded-pill btn-lg mb-5"
+            type="submit"
+          
+            style="background-color: #F8600A; width: 100%"
+          >
+            <!-- {/* loginUser send data using fetch APi */} -->
+            <span style= "font-family: Roboto; font-weight:bolder ; font-size:25px">REGISTER</span>
+          </button>
+        </form>
+       
+        
+        </div>
+
+
+        
+
+
+
+    <!-- script  -->
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+    <!-- <div id="root"></div> -->
+    <script>
+      function preview() {
+        frame.src = URL.createObjectURL(event.target.files[0]);
+      }
+      function clearImage() {
+        document.getElementById("formFile").value = null;
+        frame.src = "";
+      }
+    </script>
+        <script>
+
+const form  = document.getElementById('Register-form');
+      form.addEventListener('submit', (event) => {
+      // handle the form data
+       event.preventDefault();
+            logo = document.getElementById( "resLogofiles" );
+            u_name = document.getElementById( "u_name" );
+            email = document.getElementById( "email" );
+            address = document.getElementById( "address" );
+            pincode = document.getElementById( "pincode" );
+            phone_number = document.getElementById( "resPhone" );
+            password = document.getElementById( "password" );
+            Confirm_Password = document.getElementById( "Confirm_Password" );
+            gst_no = document.getElementById( "GST" );
+            owner_name = document.getElementById( "ownerName" );
+            owner_contact = document.getElementById( "ownercontact" );
+            res_type = document.getElementById( "res_type" );
+            subscription = document.getElementById( "subscription" );
+
+           
+           var data ={
+            // username : res_username.value,
+            
+            name :u_name.value,
+            email : email.value,
+            pincode :  pincode.value,
+            phone_number : phone_number.value,
+            subscription :  subscription.value,
+            owner_name :  owner_name.value,
+            owner_contact :  owner_contact.value,
+            gst_no : gst_no.value,
+            logo :logo.value,
+            address :  address.value,
+            password : password.value,
+            // Confirm_Password :  Confirm_Password.value,
+            // res_type : res_type.value,
+            }
+
+        console.log(data);
+        // console.log(data.name);
+        let formD = new FormData(document.getElementById('Register-form'));
+
+        let res =fetch("http://127.0.0.1:5000/register",
+        {
+            method :"POST",
+            headers : {
+                // "Content-type" :"application/json",
+                // "Content-type" :"multipart/form-data",
+                "Content-type" :"multipart/form-data",
+                "Access-Control-Allow-Origin": "*",
+            },
+            // body :JSON.stringify(data),
+            body: formD,
+        }).then((res)=>{
+            if(res.ok){
+                console.log("HTTP req Successful for ");
+                window.alert("succes registeration");
+              }
+              else{
+                console.log("HTTPreq unsuccessful");
+                window.alert(" failed registeration");
+            }
+            return res;
+        })
+        .then((res)=>res.json())
+        .then((data)=>console.log(data))
+        .catch((error)=>console.log(error));
+
+        // console.log(response);
+    }
+);
+
+
+// /*****************************************************
+
+
+// const form  = document.getElementById('Register-form');
+//       form.addEventListener('submit', (event) => {
+//       // handle the form data
+
+//       let data = new FormData();
+
+//        event.preventDefault();
+//             logo = document.getElementById( "resLogofiles" );
+//             u_name = document.getElementById( "u_name" );
+//             email = document.getElementById( "email" );
+//             address = document.getElementById( "address" );
+//             pincode = document.getElementById( "pincode" );
+//             phone_number = document.getElementById( "resPhone" );
+//             password = document.getElementById( "password" );
+//             Confirm_Password = document.getElementById( "Confirm_Password" );
+//             gst_no = document.getElementById( "GST" );
+//             owner_name = document.getElementById( "ownerName" );
+//             owner_contact = document.getElementById( "ownercontact" );
+//             res_type = document.getElementById( "res_type" );
+//             subscription = document.getElementById( "subscription" );
+            
+//             data.append("name", u_name);
+//     data.append("email", email);
+//     data.append("pincode", pincode);
+//     data.append("phone_number", phone_number);
+//     data.append("subscription", this.state.countcode);
+//     data.append("owner_name", owner_name);
+//     data.append("owner_contact", owner_contact);
+//     data.append("gst_no", gst_no);
+//     data.append("logo", logo );
+//     data.append("address", address);
+//     data.append("password", password);
+           
+        
+//         console.log(data);
+//         // console.log(data.name);
+//         // let formD = new FormData(document.getElementById('Register-form'));
+
+//         let res =fetch("http://127.0.0.1:5000/register",
+//         {
+//             method :"POST",
+//             headers : {
+//                 // "Content-type" :"application/json",
+//                 // "Content-type" :"multipart/form-data",
+//                 "Content-type" :"multipart/form-data",
+//                 "Access-Control-Allow-Origin": "*",
+//             },
+//             body :JSON.stringify(data),
+//             // body: formD,
+//             body: data,
+
+//         }).then((res)=>{
+//             if(res.ok){
+//                 console.log("HTTP req Successful for ");
+//                 window.alert("succes registeration");
+//               }
+//               else{
+//                 console.log("HTTPreq unsuccessful");
+//                 window.alert(" failed registeration");
+//             }
+//             return res;
+//         })
+//         .then((res)=>res.json())
+//         .then((data)=>console.log(data))
+//         .catch((error)=>console.log(error));
+
+//         // console.log(response);
+//     }
+// );
+
+
+// /*****************************************************
+
+
+
+
+
+
+
+        </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>
